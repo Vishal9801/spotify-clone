@@ -22,23 +22,23 @@ const playFunc = () => {
 </script>
 
 <template>
-    <div class="p-8 overflow-x-hidden">
+    <div class="p-8 overflow-x-hidden bg-gradient-to-b from-[#121212] to-[#070707]">
         <button
             type="button"
-            class="text-white text-2xl font-semibold hover:underline cursor-pointer"
+            class="text-white text-2xl font-bold hover:underline cursor-pointer"
         >
             {{ artist.name }}
         </button>
 
         <div class="py-1.5"></div>
-        <div class="flex items-center w-full relative h-full">
-            <img width="140" :src="artist.albumCover">
+        <div class="flex items-center w-full relative h-full bg-[#181818] bg-opacity-40 p-6 rounded-xl backdrop-blur-sm">
+            <img width="140" :src="artist.albumCover" class="rounded-md shadow-xl" />
 
             <div class="w-full ml-5">
 
                 <div
                     style="font-size: 33px;"
-                    class="text-white absolute w-full hover:underline cursor-pointer top-0 font-bosemiboldld"
+                    class="text-white absolute w-full hover:underline cursor-pointer top-0 font-bold drop-shadow-md"
                 >
                     {{ artist.name }}
                 </div>
@@ -56,33 +56,35 @@ const playFunc = () => {
                 </div>
 
                 <div class="absolute flex gap-4 items-center justify-start bottom-0 mb-1.5">
-                    <button class="p-1 rounded-full bg-white" @click="playFunc()">
-                        <Play v-if="!isPlaying" fillColor="#181818" :size="25"/>
-                        <Pause v-else fillColor="#181818" :size="25"/>
+                    <button class="p-1.5 rounded-full bg-[#1BD760] hover:bg-[#1ED760] hover:scale-105 transition-all duration-200 shadow-lg" @click="playFunc()">
+                        <Play v-if="!isPlaying" fillColor="#000000" :size="25"/>
+                        <Pause v-else fillColor="#000000" :size="25"/>
                     </button>
-                    <button type="button">
+                    <button type="button" class="hover:scale-105 transition-all duration-200">
                         <Heart fillColor="#1BD760" :size="30"/>
                     </button>
-                    <button type="button">
+                    <button type="button" class="hover:scale-105 transition-all duration-200">
                         <DotsHorizontal fillColor="#FFFFFF" :size="25"/>
                     </button>
                 </div>
             </div>
         </div>
 
-        <div class="mt-6"></div>
-        <div class="flex items-center justify-between px-5 pt-2">
+        <div class="mt-8"></div>
+        <div class="flex items-center justify-between px-5 pt-2 bg-[#121212] bg-opacity-60 rounded-t-md">
             <div class="flex items-center justify-between text-gray-400">
-                <div class="mr-7">#</div>
-                <div class="text-sm">Title</div>
+                <div class="mr-7 font-semibold">#</div>
+                <div class="text-sm font-medium">Title</div>
             </div>
             <div><ClockTimeThreeOutline fillColor="#FFFFFF" :size="18"/></div>
         </div>
         <div class="border-b border-b-[#2A2A2A] mt-2"></div>
         <div class="mb-4"></div>
-        <ul class="w-full" v-for="track, index in artist.tracks" :key="track">
-            <SongRow :artist="artist" :track="track" :index="++index"/>
-        </ul>
+        <div class="bg-[#121212] bg-opacity-30 rounded-b-md p-1">
+            <ul class="w-full" v-for="track, index in artist.tracks" :key="track">
+                <SongRow :artist="artist" :track="track" :index="++index"/>
+            </ul>
+        </div>
     </div>
 </template>
 

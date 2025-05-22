@@ -3,10 +3,10 @@
 </script>
 
 <template>
-    <div class="p-8">
+    <div class="p-8 bg-gradient-to-b from-[#121212] via-[#0D0D0D] to-[#070707] min-h-screen">
         <button
             type="button"
-            class="text-white text-2xl font-semibold hover:underline cursor-pointer"
+            class="text-white text-3xl font-bold hover:underline cursor-pointer mb-4 tracking-tight"
         >
             Browse all
         </button>
@@ -57,3 +57,14 @@
         </div>
     </div>
 </template>
+
+<style scoped>
+.grid {
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+</style>
