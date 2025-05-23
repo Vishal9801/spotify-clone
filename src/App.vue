@@ -91,7 +91,7 @@
         <div id="SideNav" class="h-[100%] p-6 w-[240px] fixed z-50 bg-black">
             <RouterLink to="/">
               <div class="nidhi-logo">
-                <div class="nidhi-text">NIDHI</div>
+                <div class="nidhi-text">Youtify</div>
                 <div class="nidhi-subtitle">Music</div>
               </div>
             </RouterLink>

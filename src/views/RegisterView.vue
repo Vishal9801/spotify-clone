@@ -102,7 +102,7 @@ const handleGoogleLogin = async () => {
     <div class="max-w-md w-full space-y-8 p-10 bg-[#181818] rounded-xl shadow-xl">
       <div class="text-center">
         <div class="nidhi-logo mx-auto mb-6">
-          <div class="nidhi-text">NIDHI</div>
+          <div class="nidhi-text">Youtify</div>
           <div class="nidhi-subtitle">Music</div>
         </div>
         <h2 class="text-3xl font-bold text-white">Create your account</h2>
